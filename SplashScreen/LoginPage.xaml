@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SplashScreen.LoginPage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left side (Login Form) -->
+        <StackLayout Grid.Column="0" Padding="30,50" VerticalOptions="CenterAndExpand">
+            <Label Text="Login"
+                FontSize="36"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+
+            <Entry Placeholder="Email Address"
+                Keyboard="Email"
+                Margin="0,20,0,0"
+                x:Name="emailEntry"
+                FontSize="18"
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="40"
+                BackgroundColor="White"
+                TextColor="Black"
+                PlaceholderColor="Gray" />
+
+            <Entry Placeholder="Password"
+                IsPassword="True"
+                Margin="0,20,0,0"
+                x:Name="passwordEntry"
+                FontSize="18"
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="40"
+                BackgroundColor="White"
+                TextColor="Black"
+                PlaceholderColor="Gray" />
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="0,30,0,0">
+                <CheckBox x:Name="rememberMeCheckBox" />
+                <Label Text="Remember Me" VerticalOptions="Center" />
+                <Label Text="Forgot Password" TextColor="Gray" HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+
+            <Button Text="Login"
+                 FontSize="18"
+                 FontAttributes="Bold"
+                 BackgroundColor="Black"
+                 TextColor="White"
+                 HeightRequest="50"
+                 Margin="0,30,0,0"
+                 HorizontalOptions="FillAndExpand"
+                 Clicked="OnLoginButtonClicked"/>
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,20,0,0">
+                <Label Text="Don't Have An Account?" />
+                <Label Text="Sign Up" TextColor="Gray" />
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Right side (Logo) -->
+        <StackLayout Grid.Column="1" BackgroundColor="Black">
+            <StackLayout.VerticalOptions>
+                <OnPlatform x:TypeArguments="LayoutOptions">
+                    <On Platform="iOS" Value="EndAndExpand" />
+                    <On Platform="Android" Value="CenterAndExpand" />
+                    <On Platform="WinUI" Value="CenterAndExpand" />
+                </OnPlatform>
+            </StackLayout.VerticalOptions>
+        </StackLayout>
+    </Grid>
+</ContentPage>
